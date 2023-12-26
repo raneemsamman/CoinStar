@@ -25,12 +25,10 @@ public class CoinStar {
 
   /** takes in coins from user */
 
-  public void intake(){
-
-    //prompt user to enter
+    public void intake() {
         String[] coinNames = {"pennies", "nickels", "dimes", "quarters", "halfDollars", "ones", "fives", "tens", "twenties", "fifties", "hundreds"};
 
-        for (int i = 0; i < coinNames.length; i++) {
+        for (int i = 0; i < coinCounts.length; i++) {
             System.out.print("Enter the number of " + coinNames[i] + ": ");
             coinCounts[i] = scan.nextInt();
         }
@@ -51,7 +49,7 @@ public class CoinStar {
             if (money >= COIN_VALUES[i]) {
                 int count = money / COIN_VALUES[i];
                 money %= COIN_VALUES[i];
-                System.out.println("You get " + count + " $" + COIN_VALUES[i] / 100 + " bills/coins");
+                System.out.println("You get " + count + " $" + COIN_VALUES[i] / 100.0 + " bills/coins");
             }
         }
     }
